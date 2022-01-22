@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class ResultScreen extends StatelessWidget {
-  ResultScreen();
+  ResultScreen(this.correctAnswers, this.wrongAnswers);
+
+  final int correctAnswers;
+  final int wrongAnswers;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +17,7 @@ class ResultScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "Correct Answers: ",
+              "Correct Answers: $correctAnswers",
               style: TextStyle(
                 fontSize: 24,
                 color: Colors.green,
@@ -22,7 +25,7 @@ class ResultScreen extends StatelessWidget {
             ),
             SizedBox(height: 30),
             Text(
-              "Wrong Answers: ",
+              "Wrong Answers: $wrongAnswers",
               style: TextStyle(
                 fontSize: 24,
                 color: Colors.red,
